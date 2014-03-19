@@ -14,6 +14,8 @@
 		<org.slf4j-version>1.6.1</org.slf4j-version>
 	</properties>
 	<dependencies>
+	    <!-- webservice -->
+	    <!-- 
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxws</artifactId>
@@ -29,7 +31,8 @@
 			<artifactId>cxf-rt-transports-http-jetty</artifactId>
 			<version>2.7.7</version>
 		</dependency>
-
+		-->
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -46,6 +49,16 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
 		<!-- AspectJ -->
@@ -199,6 +212,16 @@
 			<version>1.3</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<version>10.10.1.1</version>
+		</dependency>
 	</dependencies>
 	<repositories>
 		<!-- For testing against latest Spring snapshots -->
@@ -213,7 +236,7 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-		<!--maven  -->
+		<!--maven -->
 		<repository>
 			<id>maven</id>
 			<name>maven</name>

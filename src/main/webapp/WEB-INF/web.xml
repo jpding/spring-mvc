@@ -26,20 +26,32 @@
 		<async-supported>true</async-supported>
 	</servlet>
 	
-	<!--
+	<!--logback日志查看 -->
 	<servlet>
-		<description>Apache CXF Endpoint</description>
-		<display-name>cxf</display-name>
-		<servlet-name>cxf</servlet-name>
-		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
+		<servlet-name>ViewStatusMessages</servlet-name>
+		<servlet-class>ch.qos.logback.classic.ViewStatusMessagesServlet</servlet-class>
 	</servlet>
-	
+ 
 	<servlet-mapping>
-		<servlet-name>cxf</servlet-name>
-		<url-pattern>/services/*</url-pattern>
+		<servlet-name>ViewStatusMessages</servlet-name>
+		<url-pattern>/logbackStatus</url-pattern>
 	</servlet-mapping>
-	-->
+
+	
+	<!--
+		<servlet>
+			<description>Apache CXF Endpoint</description>
+			<display-name>cxf</display-name>
+			<servlet-name>cxf</servlet-name>
+			<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+			<load-on-startup>1</load-on-startup>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>cxf</servlet-name>
+			<url-pattern>/services/*</url-pattern>
+		</servlet-mapping>
+		-->
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>

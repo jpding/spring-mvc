@@ -6,7 +6,7 @@
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/root-context.xml,/WEB-INF/spring/cxf.xml</param-value>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
 	</context-param>
 	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
@@ -26,6 +26,7 @@
 		<async-supported>true</async-supported>
 	</servlet>
 	
+	<!--
 	<servlet>
 		<description>Apache CXF Endpoint</description>
 		<display-name>cxf</display-name>
@@ -33,15 +34,16 @@
 		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-		
-	<servlet-mapping>
-		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/</url-pattern>
-	</servlet-mapping>
 	
 	<servlet-mapping>
 		<servlet-name>cxf</servlet-name>
 		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+	-->
+		
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 	<!-- Disables Servlet Container welcome file handling. Needed for compatibility with Servlet 3.0 and Tomcat 7.0 -->

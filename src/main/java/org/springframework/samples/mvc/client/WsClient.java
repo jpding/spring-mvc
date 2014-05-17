@@ -8,5 +8,7 @@ public class WsClient {
 		bean.setServiceClass(HelloWorld.class);
 		HelloWorld hello = bean.create(HelloWorld.class);
 		System.out.println(hello.sayHi("xxx"));*/
+		
+		System.out.println("");
 	}
 }

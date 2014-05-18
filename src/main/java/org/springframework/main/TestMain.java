@@ -17,8 +17,11 @@ public class TestMain {
 		SqlSession session = sessionFactory.openSession();
 		try{
 			EasyMapper mapper = session.getMapper(EasyMapper.class);
-			Easy easy = mapper.getById(1);
-			System.out.println(easy.getEname());
+			Easy easy = mapper.getById(2);
+			System.out.print(easy.getEname());
+			System.out.print("\t");
+			System.out.print(easy.getEpassword());
+			System.out.println();
 		}finally{
 			session.close();
 		}

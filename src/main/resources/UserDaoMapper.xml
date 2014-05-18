@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springframework.main.mybatis.mapper.UserMapper">
+	<parameterMap type="org.springframework.main.mybatis.domain.User" id="parameterMapUser">
+		<parameter property="id"/>
+		<parameter property="name"/>
+	</parameterMap>
+	
+	<resultMap type="org.springframework.main.mybatis.domain.User" id="resultMapUser">
+		<result property="id" column="id_"/>
+		<result property="name" column="name_"/>
+	</resultMap>
+	
+	<insert id="insertUser" parameterMap="parameterMapUser">
+		insert into user_(id_, name_) values(?,?)
+	</insert>
+	
+	<select id="countAll" resultType="int">
+		select count(*) c from user_
+	</select>
+	
+	<select id="getById" parameterType="String" resultMap="resultMapUser">
+		select * from user where id=#{value}
+	</select>
+	
+	<delete id="deleteUser" parameterType="String">
+		delete from user_ where id_=#{value}
+	</delete>
+	
+	<update id="updateUser" parameterType="java.util.Map">
+		update user_ set name_=#{name} where id_=#{id}
+	</update>
+    
+</mapper>

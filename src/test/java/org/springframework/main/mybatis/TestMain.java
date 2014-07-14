@@ -1,4 +1,4 @@
-package org.springframework.main;
+package org.springframework.main.mybatis;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.defaults.DefaultSqlSessionFactory;
@@ -11,6 +11,7 @@ public class TestMain {
 	private static ClassPathXmlApplicationContext context;
 
 	public static void main(String[] args) {
+		System.out.println("=============");
 		context = new  ClassPathXmlApplicationContext("/META-INF/spring/applicationContext.xml");
 		DefaultSqlSessionFactory sessionFactory = context.getBean("sqlSessionFactory", DefaultSqlSessionFactory.class);
 		

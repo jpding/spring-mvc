@@ -4,6 +4,7 @@
 <configuration>
 	<mappers>
 		<mapper resource="EasyMapper.xml" />
+		<mapper resource="UserDaoMapper.xml"/>
 	</mappers>
 
 </configuration>

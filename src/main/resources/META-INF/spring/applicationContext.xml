@@ -32,22 +32,30 @@
 		<property name="configLocation" value="classpath:Configration.xml" />
 	</bean>
 	
-	<!--使用Spring回话管理，配置MyBatis Session-->
+	<!--使用Spring回话管理，配置MyBatis Session
 	<bean id="mbatisSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:MyBatis-Configration.xml" />
 	</bean>
+	-->
 	
+	<!-- MyBatis Mapper实例化 -->
 	<bean  class="org.mybatis.spring.mapper.MapperFactoryBean"> 
 		<property name="mapperInterface" value="org.springframework.main.mybatis.mapper.UserMapper"/> 
-		<property name="sqlSessionFactory" ref="mbatisSessionFactory"/> 
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/> 
 	</bean> 
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="org.springframework.main.students.mapper" />
+	</bean>
 	
 	<!--使用Spring事务管理-->
 	<bean name="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
+	
+
     
 	<!-- 配置当出现Exception、RuntimeException、Exception时采用对应的事务操作 -->
 	<tx:advice id="userTxAdvice" transaction-manager="transactionManager">
